@@ -1,5 +1,5 @@
 # Add the import statements for necessary sympy functions here
-from simpy import solve as simpy_solve
+from sympy import solve as sympy_solve
 
 
 ELEMENTS = [
