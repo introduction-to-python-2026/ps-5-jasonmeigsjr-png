@@ -1,6 +1,6 @@
 # Add the import statements for necessary sympy functions here
 from sympy.core import solve as sympy_solve
-from sympy.core import symbols
+from sympy.core import symbols,Eq
 
 
 ELEMENTS = [
