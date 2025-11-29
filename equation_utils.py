@@ -1,5 +1,6 @@
 # Add the import statements for necessary sympy functions here
-
+from simpy import solve as simpy_solve
+from simpy import enumerate
 
 ELEMENTS = [
     'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne',
