@@ -1,15 +1,16 @@
-
 def split_before_uppercases(formula):
     if not formula:
         return []
     start = 0
     split_formula = []
-    for i in range(0, len(formula)):
+    for i in range(len(formula)):
         if formula[i].isupper():
-            split_formula.append(formula[start:i])
-            start=i
+            if formula[start:i]:        # skip empty string
+                split_formula.append(formula[start:i])
+            start = i
     split_formula.append(formula[start:])
     return split_formula
+
 
 
 def split_at_digit(formula):
