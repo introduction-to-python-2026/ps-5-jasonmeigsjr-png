@@ -1,37 +1,30 @@
 def split_before_uppercases(formula):
-    if not formula:
-        return []
-    start = 0
-    split_formula = []
-    for i in range(len(formula)):
-        if formula[i].isupper():
-            if formula[start:i]:        # skip empty string
-                split_formula.append(formula[start:i])
-            start = i
-    split_formula.append(formula[start:])
-    return split_formula
+    t = []
+    splited_formula= []
+    for char in formula:
+        if char.isupper():
+            if t:
+                splited_formula.append(''.join(t))
+            t = [char]
+        else:
+            t.append(char)
+    if t:
+        splited_formula.append(''.join(t))
+    return splited_formula
 
 
+def split_at_number(formula):
+    digits= []
+    letters= []
+    for char in formula:
+        if char.isdigit():
+            digit.append(char)
+        else:
+            letters.append(char)
+    if digits == []:
+        digits.append("1")
+    return ''.join(letters), int(''.join(digits))
 
-def split_at_digit(formula):
-    digit_location=-1
-    
-    for i in range(len(formula)):
-        if formula[i].isdigit():
-            digit_location = i
-            break
-    if digit_location == -1:
-        return formula, 1
-        
-    prefix = formula[:digit_location]
-    
-    j = digit_location
-    while j <len(formula) and formula[j].isdigit():
-        j += 1
-        
-    num = int(formula[digit_location:j])
-    
-    return prefix,num
 
 
 
@@ -43,10 +36,7 @@ def count_atoms_in_molecule(molecular_formula):
         atom_counts[atom_name] = atom_counts.get(atom_name, 0) + atom_count
     return atom_counts
         
-        # Step 2: Update the dictionary with the atom name and count
-
-    # Step 3: Return the completed dictionary
-
+        
 
 
 def parse_chemical_reaction(reaction_equation):
