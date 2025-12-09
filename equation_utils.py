@@ -49,7 +49,7 @@ def my_solve(equations, coefficients):
     Example: For equations [2*a0 - 2*b0, a1 - b0], returns [1.0, 1.0]."""
     solution = sympy_solve(equations, coefficients)
 
-    if len(solution) == len(coefficients):
+    if solution:
         coefficient_values = list()
         for coefficient in coefficients:
             coefficient_values.append(float(solution[coefficient]))
